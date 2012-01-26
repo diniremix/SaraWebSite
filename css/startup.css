@@ -1,0 +1,14 @@
+
+.js .div_oculto{
+	display: none;
+}
+js .hola{
+	display:none;
+}
+/*Si el navegador no tiene activado JavaScript*/
+.div_oculto{
+	display: none;
+}
+.hola{
+	display:none;
+}
