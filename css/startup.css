@@ -1,21 +1,9 @@
 
-.js .menubar{
-	display: none;
-}
-
-.js .menuppal{
+.js .busqueda{
 	display: block;
 }
 
-js .notificaciones{
-	display: none;
-}
-
-js .columnas{
-	display: none;
-}
-
-js .dlg{
+.js .menuppal{
 	display: block;
 }
 
@@ -31,13 +19,31 @@ js .ordenables{
 	display: none;
 }
 
-js .navegacion{
+js .listas{
 	display: none;
 }
 
 js .estadisticas{
 	display: none;
 }
+
+/*
+js .notificaciones{
+	display: none;
+}
+
+js .columnas{
+	display: none;
+}
+
+js .dlg{
+	display: block;
+}
+
+js .navegacion{
+	display: none;
+}
+*/
 /*Si el navegador no tiene activado JavaScript
 .padss20{
 	display: none;
@@ -45,4 +51,3 @@ js .estadisticas{
 .hola{
 	display:none;
 }*/
-

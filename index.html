@@ -4,14 +4,14 @@
 		<!-- Meta -->
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<!-- End of Meta -->
-		
 		<!-- Page title -->
 		<title>Registro y Control Academico</title>
 		<!-- End of Page title -->
 		
 		<!-- Libraries -->
-		<link type="text/css" href="css/layout.css" rel="stylesheet" />	
 		<link type="text/css" href="css/startup.css" rel="stylesheet" />	
+		<link type="text/css" href="css/layout.css" rel="stylesheet" />	
+		
 		
 		<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
 		<script type="text/javascript" src="js/easyTooltip.js"></script>
@@ -24,9 +24,259 @@
 		<!-- End of Libraries -->	
 	</head>
 	<body>
-	
-	
-	</body>
+<!-- Container -->
+		<div id="container">
+		
+			<!-- Header -->
+			<div id="header">
+				
+				<!-- Top -->
+				<div id="top">
+
+					<!-- Logo -->
+					<div class="logo"> 
+						<!--<a href="#" title="Administration Home" class="tooltip"><img src="assets/logos.png" alt="Wide Admin" /></a> -->
+					</div>
+					<!-- End of Logo -->
+
+					<!-- Meta information -->
+					<div class="meta">
+						<p>Welcome, Usuario! <a href="#" title="1 mensaje haz click aqu&iacute; para leer!" class="tooltip">tienes 1 mensaje(s)!</a></p>
+						<ul>
+							<li><a href="login.html" title="Cerrar tu sesi&oacute;n" class="tooltip"><span class="ui-icon ui-icon-power"></span>Salir</a></li>
+							<li><a href="#" title="Ir al panel de configuraci&oacute;n" class="tooltip"><span class="ui-icon ui-icon-wrench"></span>Configuraciones</a></li>
+							<li><a href="#" title="Ir a tu cuenta" class="tooltip"><span class="ui-icon ui-icon-person"></span>Mi cuenta</a></li>
+						</ul>	
+					</div>
+					<!-- End of Meta information -->
+
+				</div>
+				<!-- End of Top-->
+
+				<!-- menu bar-->
+				<div id="menubar" class="menubar">
+				<!-- The navigation bar -->
+					<div id="navbar">
+						<ul class="nav">
+							<li><a href="">Dashboard</a></li>
+							<li><a href="">Usuarios</a></li>
+							<li><a href="">Notificaciones</a></li>
+							<li><a href="">Modulos</a></li>
+						</ul>
+					</div>
+				<!-- End of navigation bar" -->
+				</div>
+				<!-- menu bar-->
+
+				<!-- Search bar -->
+				<div id="busqueda" class="busqueda">
+					<div id="search">
+						<form action="/search/" method="POST">
+							<p>
+								<input type="submit" value="" class="but" />
+								<input type="text" name="q" value="Search the admin panel" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" />
+							</p>
+						</form>
+					</div>
+				</div>
+				<!-- End of Search bar -->
+			</div>
+			<!-- End of Header -->
+			
+			<!-- Background wrapper -->
+			<div id="bgwrap">
+
+			<!-- Main Content -->
+				<div id="content">
+					<div id="main">
+						<h1>Bienvenido, <span>Usuario</span>!</h1>
+						<p>Qu&eacute; quieres hacer hoy?</p>	
+						
+						<!-- menu ppal-->
+						<div id="menuppal" class="menuppal">
+							<div class="pad20">
+							<!-- Big buttons -->
+								<ul class="dash">
+									<li>
+										<a href="#" onclick='' title="Gestor de usuarios" class="tooltip">
+											<img src="assets/icons/users_two_48.png" alt="" />
+											<span>Usuarios</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" onclick='' title="Generar un nuevo Pin" class="tooltip">
+											<img src="assets/icons/8_48x48.png" alt="" />
+											<span>Pin &uacute;nico</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" onclick='' title="Matricular estudiantes" class="tooltip">
+											<img src="assets/icons/16_48x48.png" alt="" />
+											<span>Matriculas</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" title="Manejar las notificaciones" class="tooltip">
+											<img src="assets/icons/comment_48.png" alt="" />
+											<span>Notificaciones</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" title="Realizar ajustes de la aplicaci&oacute;n" class="tooltip">
+											<img src="assets/icons/spanner_48.png" alt="" />
+											<span>Configuraciones</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" title="Registrar estudiantes" class="tooltip">
+											<img src="assets/icons/19_48x48.png" alt="" />
+											<span>Registros</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" title="" class="tooltip">
+											<img src="assets/icons/15_48x48.png" alt="" />
+											<span>Estadisticas</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" title="Administrar modulos instalados" class="tooltip">
+											<img src="assets/icons/28_48x48.png" alt="" />
+											<span>Modulos</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" title="informacion de esta aplicacion" class="tooltip">
+											<img src="assets/icons/info_48.png" alt="" />
+											<span>Acerca de...</span>
+										</a>
+									</li>
+								</ul>
+								<!-- End of Big buttons -->
+							</div>
+						</div>
+						<!-- menu ppal-->	
+						<hr/>
+					</div>
+				</div>
+			<!-- End of Main Content -->
+
+			<!-- Sidebar -->
+				<div id="sidebar">
+
+				<!-- Accordion -->
+					<div id="acordeon" class="acordeon">
+						<h2>Accordion</h2>		
+						<div id="accordion">
+							<div>
+								<h3><a href="#" title="First slide" class="tooltip">First</a></h3>
+								<div>Praesent augue urna, vehicula sed sollicitudin quis, dignissim nec est. Quisque dignissim lorem at metus vehicula ut feugiat eros vestibulum. Suspendisse ultrices, massa luctus aliquam faucibus, sem quam fermentum nisl, non posuere quam nunc vel tellus.</div>
+							</div>
+							<div>
+								<h3><a href="#" title="Second slide" class="tooltip">Second</a></h3>
+								<div>Sed sem elit, porttitor quis vestibulum ut, euismod id purus. Praesent vulputate dolor vel nisi mattis sollicitudin. Curabitur placerat quam at sem tempor ac sodales nunc dapibus. Nullam mi purus, adipiscing in facilisis sed, posuere ut ipsum.</div>
+							</div>
+							<div>
+								<h3><a href="#" title="Third slide" class="tooltip">Third</a></h3>
+								<div>Praesent augue urna, vehicula sed sollicitudin quis, dignissim nec est. Quisque dignissim lorem at metus vehicula ut feugiat eros vestibulum. Suspendisse ultrices, massa luctus aliquam faucibus, sem quam fermentum nisl, non posuere quam nunc vel tellus.</div>
+							</div>
+						</div>
+					</div>
+					<!-- End of Accordion-->
+					
+					<!-- Listas -->
+					<div id="listas" class="listas">
+						<h2>Lists / Navigation</h2>
+						<ul>
+							<li><a href="">Lorem I"listas"sum</a></li>
+							<li><a href="">Artificial Intelligence</a></li>
+							<li><a href="">jQuery Power</a>
+								<ul>
+									<li><a href="">Lorem Ipsum</a></li>
+									<li><a href="">Artificial Intelligence</a></li>
+									<li><a href="">Lorem Ipsum</a>
+										<ul>
+											<li><a href="">Lorem Ipsum</a></li>
+											<li><a href="">Artificial Intelligence</a></li>
+											<li><a href="">Lorem Ipsum</a></li>
+											<li class="last"><a href="">Artificial Intelligence</a></li>
+										</ul>
+									</li>
+									<li class="last"><a href="">Artificial Intelligence</a></li>
+								</ul>
+							</li>
+							<li><a href="">Another category</a></li>
+						</ul>
+					</div>
+					<!-- End of Listas -->
+
+					<!-- Datepicker -->
+					<div id="calendario" class="calendario">
+						<h2>Datepicker</h2>
+						<div id="datepicker"></div>
+					</div>
+					<!-- End of Datepicker -->
+
+					<!-- ordenables -->
+					<div id="ordenables" class="ordenables">
+						<!-- Sortable Dialogs -->
+						<h2>Sortable Dialogs</h2>
+						<div class="sort">
+							<div class="box ui-widget ui-widget-content ui-corner-all portlet">
+							<div class="portlet-header">Sortable 1</div>
+								<div class="portlet-content">
+									<p>This is a sortable dialog. Praesent augue urna, vehicula sed sollicitudin quis, dignissim nec est.</p>
+								</div>
+							</div>
+							
+							<div class="box ui-widget ui-widget-content ui-corner-all portlet">
+								<div class="portlet-header">Sortable 2</div>
+								<div class="portlet-content">
+									<p>This is a sortable dialog. Praesent augue urna, vehicula sed sollicitudin quis, dignissim nec est.</p>
+								</div>
+							</div>
+							
+							<div class="box ui-widget ui-widget-content ui-corner-all portlet">
+								<div class="portlet-header">Sortable 3</div>
+								<div class="portlet-content">
+									<p>This is a sortable dialog. Praesent augue urna, vehicula sed sollicitudin quis, dignissim nec est.</p>
+								</div>
+							</div>
+						</div>
+						<!-- End of Sortable Dialogs -->
+					</div>
+					<!-- ordenables -->
+					
+					<!-- Statistics -->
+					<div id="estadisticas" class="estadisticas">
+						<h2>Estadisticas</h2>
+						<p><b>Articles:</b> 2201</p>
+						<p><b>Comments:</b> 17092</p>
+						<p><b>Users:</b> 3788</p>
+						<p></p>
+					</div>
+					<!-- End of Statistics -->
+
+				</div>
+				<!-- End of Sidebar -->
+		</div>
+		<!-- End of bgwrap -->
+	</div>
+	<!-- End of Container -->
+
+<!-- Footer -->
+<div id="footer">
+	<p class="mid">
+		<a href="#" title="Arriba" class="tooltip">Arriba</a>&middot;<a href="#" title="Pagina Principal" class="tooltip">Inicio</a>&middot;<a href="#" title="Ir a tu cuenta" class="tooltip">Mi cuenta</a>&middot;<a href="login.html" title="Cerrar tu sesi&oacute;n" class="tooltip">Salir</a>
+	</p>
+	<p class="mid">
+		<!-- Change this to your own once purchased -->
+		&copy; The OpenDoorGroup 2012. Se distribuye bajo una licencia BSD.
+		<!-- -->
+	</p>
+</div>
+<!-- End of Footer -->
+</body>
 </html>
 
 
