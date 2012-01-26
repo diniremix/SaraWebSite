@@ -1,14 +1,48 @@
 
-.js .div_oculto{
+.js .menubar{
 	display: none;
 }
-js .hola{
-	display:none;
+
+.js .menuppal{
+	display: block;
 }
-/*Si el navegador no tiene activado JavaScript*/
-.div_oculto{
+
+js .notificaciones{
+	display: none;
+}
+
+js .columnas{
+	display: none;
+}
+
+js .dlg{
+	display: block;
+}
+
+js .acordeon{
+	display: none;
+}
+
+js .calendario{
+	display: none;
+}
+
+js .ordenables{
+	display: none;
+}
+
+js .navegacion{
+	display: none;
+}
+
+js .estadisticas{
+	display: none;
+}
+/*Si el navegador no tiene activado JavaScript
+.padss20{
 	display: none;
 }
 .hola{
 	display:none;
-}
+}*/
+
