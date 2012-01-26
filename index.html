@@ -41,7 +41,7 @@
 
 					<!-- Meta information -->
 					<div class="meta">
-						<p>Welcome, Usuario! <a href="#" title="1 mensaje haz click aqu&iacute; para leer!" class="tooltip">tienes 1 mensaje(s)!</a></p>
+						<p>Bienvenido, Usuario! <a href="#" title="1 mensaje nuevo aqu&iacute;!" class="tooltip">1 mensaje(s)!</a></p>
 						<ul>
 							<li><a href="login.html" title="Cerrar tu sesi&oacute;n" class="tooltip"><span class="ui-icon ui-icon-power"></span>Salir</a></li>
 							<li><a href="#" title="Ir al panel de configuraci&oacute;n" class="tooltip"><span class="ui-icon ui-icon-wrench"></span>Configuraciones</a></li>
@@ -91,14 +91,26 @@
 					<div id="main">
 						<h1>Bienvenido, <span>Usuario</span>!</h1>
 						<p>Qu&eacute; quieres hacer hoy?</p>	
-						
+						<script type="text/javascript">
+						function mostrarUser(){
+							console.log('llamada al mostrarUser');
+							$("#menuppal").hide(200);
+							$("#menuser").show(300);
+						}
+						function mostrarppal(){
+							console.log('llamada al mostrarppal');
+							$("#menuser").hide(300);
+							$("#menuppal").show(200);
+							
+						}
+						</script>
 						<!-- menu ppal-->
 						<div id="menuppal" class="menuppal">
 							<div class="pad20">
 							<!-- Big buttons -->
 								<ul class="dash">
 									<li>
-										<a href="#" onclick='' title="Gestor de usuarios" class="tooltip">
+										<a href="#" onclick='mostrarUser();' title="Gestor de usuarios" class="tooltip">
 											<img src="assets/icons/users_two_48.png" alt="" />
 											<span>Usuarios</span>
 										</a>
@@ -156,6 +168,37 @@
 							</div>
 						</div>
 						<!-- menu ppal-->	
+
+
+						<!-- menu ppal de usuarios-->
+						<div id="menuser" class="menuser">
+							<div class="pad20">
+							<!-- Big buttons -->
+								<ul class="dash">
+									<li>
+										<a href="#" onclick='mostrarppal();' title="Gestor de usuarios" class="tooltip">
+											<img src="assets/icons/users_two_48.png" alt="" />
+											<span>Usuarios</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" onclick='' title="Generar un nuevo Pin" class="tooltip">
+											<img src="assets/icons/8_48x48.png" alt="" />
+											<span>Pin &uacute;nico</span>
+										</a>
+									</li>
+									
+									<li>
+										<a href="#" title="informacion de esta aplicacion" class="tooltip">
+											<img src="assets/icons/info_48.png" alt="" />
+											<span>Acerca de...</span>
+										</a>
+									</li>
+								</ul>
+								<!-- End of Big buttons -->
+							</div>
+						</div>
+						<!-- menu ppal de usuarios-->
 						<hr/>
 					</div>
 				</div>
@@ -250,10 +293,10 @@
 					<!-- Statistics -->
 					<div id="estadisticas" class="estadisticas">
 						<h2>Estadisticas</h2>
-						<p><b>Articles:</b> 2201</p>
-						<p><b>Comments:</b> 17092</p>
-						<p><b>Users:</b> 3788</p>
-						<p></p>
+						<p><b>Articulos:</b> 221</p>
+						<p><b>Comentarios:</b> 192</p>
+						<p><b>Usuarios:</b> 4</p>
+						<p><br></p>
 					</div>
 					<!-- End of Statistics -->
 
