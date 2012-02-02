@@ -79,14 +79,14 @@ select option {
 
 textarea {
 	display:block;
-	width:500px;
+	width:400px;
 	height: 160px;
 }
 
 label {
 	display:inline-block;
 	font-size:12px;
-	width:120px;
+	width:105px;
 }
 
 a.button {
@@ -101,7 +101,7 @@ a.button {
 a.button span {
 	float:left;
 	position:relative;
-	margin:2px 3px 0 3px;
+	margin:0px 3px 0 3px;
 }
 
 input.sf {

@@ -61,7 +61,7 @@
 				// Dialog			
 				$('#dialog').dialog({
 					autoOpen: false,
-					width: 500,
+					width: 800,
 					buttons: {
 						"Aceptar": function() { 
 							$(this).dialog("close"); 
@@ -82,7 +82,7 @@
 				$('#datepicker').datepicker({
 					inline: true
 				});
-				
+											
 				// Slider
 				$('#slider').slider({
 					range: true,

@@ -5,7 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<!-- End of Meta -->
 		<!-- Page title -->
-		<title>Registro y Control Academico</title>
+		<title>SARA</title>
 		<!-- End of Page title -->
 		
 		<!-- Libraries -->
@@ -20,7 +20,7 @@
 		<script type="text/javascript" src="js/hoverIntent.js"></script>
 		<script type="text/javascript" src="js/superfish.js"></script>
 		<script type="text/javascript" src="js/custom.js"></script>
-		<script type="text/javascript" src="js/startup.js"></script>
+		<script type="text/javascript" src="js/startup.js"></script>		
 		<!-- End of Libraries -->	
 	</head>
 	<body>
@@ -90,20 +90,11 @@
 				<div id="content">
 					<div id="main">
 						<h1>Bienvenido, <span>Usuario</span>!</h1>
-						<p>Qu&eacute; quieres hacer hoy?</p>	
-						<script type="text/javascript">
-						function mostrarUser(){
-							console.log('llamada al mostrarUser');
-							$("#menuppal").hide(200);
-							$("#menuser").show(300);
-						}
-						function mostrarppal(){
-							console.log('llamada al mostrarppal');
-							$("#menuser").hide(300);
-							$("#menuppal").show(200);
-							
-						}
-						</script>
+						<p>Qu&eacute; quieres hacer hoy?</p>							
+						<div id="bhome" name="bhome">
+							<a href="#" onclick='mostrarppal();' class="button" title="Home!"><span class="ui-icon ui-icon-home"></span>Inicio</a>
+						</div>
+
 						<!-- menu ppal-->
 						<div id="menuppal" class="menuppal">
 							<div class="pad20">
@@ -116,7 +107,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="#" onclick='' title="Generar un nuevo Pin" class="tooltip">
+										<a href="#" onclick='mostrarPin();' title="Generar un nuevo Pin" class="tooltip">
 											<img src="assets/icons/8_48x48.png" alt="" />
 											<span>Pin &uacute;nico</span>
 										</a>
@@ -170,11 +161,17 @@
 						<!-- menu ppal-->	
 
 
-						<!-- menu ppal de usuarios-->
+						<!-- menu de usuarios-->
 						<div id="menuser" class="menuser">
 							<div class="pad20">
 							<!-- Big buttons -->
 								<ul class="dash">
+									<li>
+										<a href="#" onclick='nuevouser();' title="Nuevo usuario" class="tooltip">
+											<img src="assets/icons/emblem-people.png" alt="" />
+											<span>Nuevo usuario</span>
+										</a>
+									</li>
 									<li>
 										<a href="#" onclick='mostrarppal();' title="Gestor de usuarios" class="tooltip">
 											<img src="assets/icons/users_two_48.png" alt="" />
@@ -182,25 +179,227 @@
 										</a>
 									</li>
 									<li>
-										<a href="#" onclick='' title="Generar un nuevo Pin" class="tooltip">
-											<img src="assets/icons/8_48x48.png" alt="" />
-											<span>Pin &uacute;nico</span>
+										<a href="#" onclick='alluser();' title="Busqueda" class="tooltip">
+											<img src="assets/icons/logviewer.png" alt="" />
+											<span>Busqueda de usuarios</span>
 										</a>
 									</li>
 									
 									<li>
-										<a href="#" title="informacion de esta aplicacion" class="tooltip">
-											<img src="assets/icons/info_48.png" alt="" />
-											<span>Acerca de...</span>
+										<a href="#" title="Editar" class="tooltip">
+											<img src="assets/icons/alacarte.png" alt="" />
+											<span>Modificar usuario</span>
 										</a>
 									</li>
 								</ul>
 								<!-- End of Big buttons -->
 							</div>
 						</div>
-						<!-- menu ppal de usuarios-->
+						<!-- menu de usuarios-->
+						
+						<!-- menu  de pines-->
+						<div id="menupines" class="menupines">
+							<div class="pad20">
+							<!-- Big buttons -->
+								<ul class="dash">
+									<li>
+										<a href="#" onclick='nuevoPin();' title="Nuevo Pin" class="tooltip">
+											<img src="assets/icons/8_48x48.png" alt="" />
+											<span>Nuevo PIN</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" onclick='allPines();' title="Busqueda" class="tooltip">
+											<img src="assets/icons/alacarte.png" alt="" />
+											<span>Busqueda de Pines</span>
+										</a>
+									</li>
+								</ul>
+								<!-- End of Big buttons -->
+							</div>
+						</div>
+						<!-- menu  de pines-->
+						
+						<!-- menu nuevos usuarios-->
+						<div id="menunuser" class="menunuser">
 						<hr/>
-					</div>
+							<div class="pad20">
+							<!-- Big buttons -->
+								<form method="#" action="#" onsubmit = "return false;">
+								<!-- Fieldset -->
+									<fieldset>
+										<legend>Registro de usuarios nuevos</legend>
+										<p align="left">
+											<label for="identi">Identificaci&oacute;n: </label>
+											<input id="identi" name="identi" type="text" value="" />
+										</p>
+										<p align="left">										
+											<label for="nombres">Nombres: </label>					
+											<input id="nombres" name="nombre" type="text" value="" />
+											<label for="apellidos">Apellidos: </label>
+											<input align="right" id="apellidos" name="apellidos" type="text" value="" />
+										</p>
+										<p>
+											<label for="user">Usuario: </label>
+											<input id="user" name="user" type="text" value="" />
+											<label for="pass">Contrase&ntilde;a: </label>
+											<input id="pass" name="pass" type="password" value="" />
+										</p>
+										<p>
+											<label for="tuser">Tipo de usuario: </label>
+											<select name="tuser" id="tuser">
+												<option value="0" selected>seleccione</option>
+												<option value="1" >Administrador</option>
+												<option value="2" >Docente</option>
+												<option value="3" >Otro</option>
+											</select>
+										</p>
+										<p>
+										</p>
+										<p>
+											<span class="validate_error">Todos los campos son requeridos.!</span>
+										</p>
+										<p align="center">
+										<input id="btreset" name="btreset" class="button" type="reset" value="Cancelar">
+										<input id="btsend" name="btsend" class="button" type="submit" value="Registrar">
+										</p>
+									</fieldset>
+										<!-- End of fieldset -->									
+									</form>
+								<!-- End of Big buttons -->
+							</div>
+						</div>
+						<!--menu nuevos usuarios-->						
+
+						<!-- tabla de usuarios -->
+						<div id="menutuser" class="menutuser">
+							<hr/>
+							<div class="pad20">
+							<table class="fullwidth" cellpadding="0" cellspacing="0" border="0">
+								<thead>
+									<tr>
+										<td><input type="checkbox" class="checkall" /></td>
+										<td>Nombre</td>
+										<td>E-Mail</td>
+										<td>Usuario</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="odd">
+										<td><input type="checkbox" /></td>
+										<td>Jorge Brunal P&eacute;rez</td>
+										<td>diniremix@gmail.com</td>
+										<td><strong>Diniremix</strong></td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td>Didier Vergara Soto</td>
+										<td>didier@web.com</td>
+										<td><strong>VergaraSF</strong></td>
+									</tr>									
+								</tbody>
+							</table>
+							<p>
+								<a href="#" class="button" title="Eliminar un usuario"><span class="ui-icon ui-icon-trash"></span>Eliminar</a>
+								<a href="#" class="button"><span class="ui-icon ui-icon-pencil"></span>Modificar</a>								
+							</p>
+							</div>
+						</div>						
+						<!-- fin tabla de usuarios -->
+
+						<!-- formulario de PIN -->
+						<div id="menunupin" class="menunupin">
+						<!--<hr/>-->
+							<div class="pad20">
+								<form method="#" action="#" onsubmit = "return false;">
+								<!-- Fieldset -->
+									<fieldset>
+										<legend>Formulario de PIN</legend>
+										<p>
+											<label for="tanno">a&ntilde;o: </label>
+											<select name="tanno" id="tanno">
+												<option value="0" selected>seleccione</option>
+												<option value="1" >2012</option>
+												<option value="2" >2011</option>
+												<option value="3" >2010</option>
+											</select>
+										</p>
+										<p>
+											<label for="mesa">Expedido en: </label>
+											<select name="mesa" id="mesa">
+												<option value="0" selected>seleccione</option>
+												<option value="1" >Enero</option>
+												<option value="2" >Febrero</option>
+												<option value="3" >Marzo</option>
+											</select>
+										</p>
+										<p>
+											<label for="mesb">Expira en:</label>
+											<select name="mesb" id="mesb">
+												<option value="0" selected>seleccione</option>
+												<option value="1" >Enero</option>
+												<option value="2" >Febrero</option>
+												<option value="3" >Marzo</option>
+											</select>
+										</p>										
+											<p>
+												<label for="code">C&oacute;digo: </label>
+												<input id="code" name="code" class="sf" type="text" value="" />
+												
+											</p>
+										<p>
+										</p>
+										<p>
+											<span class="validate_error">Todos los campos son requeridos.!</span>
+										</p>
+										<p align="center">
+										<input id="btpinr" name="btpinr" class="button" type="reset" value="Cancelar">
+										<input id="btping" name="btping" class="button" type="submit" value="Generar">
+										</p>
+									</fieldset>
+										<!-- End of fieldset -->									
+								</form>
+							</div>
+						</div>							
+						<!-- formulario de PIN -->
+
+						<!-- tabla de pines -->
+						<div id="menutpin" class="menutpin">
+							<hr/>
+							<div class="pad20">
+							<table class="fullwidth" cellpadding="0" cellspacing="0" border="0">
+								<thead>
+									<tr>
+										<td><input type="checkbox" class="checkall" /></td>
+										<td>No.</td>
+										<td>PIN</td>
+										<td>Estado</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="odd">
+										<td><input type="checkbox" /></td>
+										<td>1</td>
+										<td>e3487d28424db1ef4462fed27e2601c870811620</td>
+										<td><strong>Activo</strong></td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" /></td>
+										<td>2</td>
+										<td>e3487d28424db1ef4462fed27e2601c870811620</td>
+										<td><strong>Inactivo</strong></td>
+									</tr>									
+								</tbody>
+							</table>
+							<p>
+								<a href="#" class="button" title="Eliminar un usuario"><span class="ui-icon ui-icon-trash"></span>Eliminar</a>
+								<a href="#" class="button"><span class="ui-icon ui-icon-extlink"></span>Exportar</a>								
+								<a href="#" class="button"><span class="ui-icon ui-icon-print"></span>Imprimir</a>								
+							</p>
+							</div>
+						</div>						
+						<!-- fin tabla de usuarios -->
+						</div><!-- Main Content -->
 				</div>
 			<!-- End of Main Content -->
 
@@ -255,7 +454,7 @@
 
 					<!-- Datepicker -->
 					<div id="calendario" class="calendario">
-						<h2>Datepicker</h2>
+						<h2>Calendario de actividades</h2>
 						<div id="datepicker"></div>
 					</div>
 					<!-- End of Datepicker -->
@@ -320,6 +519,130 @@
 </div>
 <!-- End of Footer -->
 </body>
+<script type="text/javascript">
+	
+	function mostrarppal(){		
+		console.log('llamada al mostrarppal');
+		$("#bhome").hide(10);	
+		$("#menuser").hide(300);
+		$("#menupines").hide(10);
+		$("#menuppal").show(200);
+
+	}
+	function mostrarUser(){		
+		console.log('llamada al mostrarUser');
+		$("#bhome").toggle(10);
+		$("#menuppal").hide(200);
+		$("#menuser").show(300);
+	}
+	function nuevouser(){
+		console.log('creando nuevo usuario');
+		$("#menunuser").toggle(100);
+	}
+	function alluser(){
+		console.log('cargando todos los usuarios');
+		$("#menutuser").toggle(200);
+	}
+
+	//menu de pines
+	function mostrarPin(){
+		console.log('cargando menus del pin');
+		$("#menuppal").hide(200);
+		$("#bhome").toggle(10);		
+		$("#menupines").show(200);
+	}
+	function nuevoPin(){
+		console.log('creando nuevo pin');
+		$("#menunupin").toggle(100);
+	}
+	function allPines(){
+		console.log('cargando todos los pines');
+		$("#menutpin").toggle(200);
+	}
+	//
+	function validar(){	
+		var user = document.querySelectorAll('#menunuser input');
+		if(validateUsername(user))
+			return true;
+		else
+			return false;
+	}
+	function validateUsername(data){
+			console.log('validar ape');
+		//NO cumple longitud minima
+		if(data['apellidos'].value.length < 4){
+			//reqUsername.addClass("error");
+			data['apellidos'].addClass("validate_error");
+			console.log('error al validar ape');
+			return false;
+		}/*
+		//SI longitud pero NO solo caracteres A-z
+		else if(!inputUsername.val().match(/^[a-zA-Z]+$/)){
+			reqUsername.addClass("error");
+			inputUsername.addClass("error");
+			return false;
+		}
+		// SI longitud, SI caracteres A-z
+		else{
+			reqUsername.removeClass("error");
+			inputUsername.removeClass("error");
+			return true;
+		}*/
+	}/*
+	function validatePassword1(){
+		//NO tiene minimo de 5 caracteres o mas de 12 caracteres
+		if(inputPassword1.val().length < 5 || inputPassword1.val().length > 12){
+			reqPassword1.addClass("error");
+			inputPassword1.addClass("error");
+			return false;
+		}
+		// SI longitud, NO VALIDO numeros y letras
+		else if(!inputPassword1.val().match(/^[0-9a-zA-Z]+$/)){
+			reqPassword1.addClass("error");
+			inputPassword1.addClass("error");
+			return false;
+		}
+		// SI rellenado, SI email valido
+		else{
+			reqPassword1.removeClass("error");
+			inputPassword1.removeClass("error");
+			return true;
+		}
+	}
+	function validatePassword2(){
+		//NO son iguales las password
+		if(inputPassword1.val() != inputPassword2.val()){
+			reqPassword2.addClass("error");
+			inputPassword2.addClass("error");
+			return false;
+		}
+		// SI son iguales
+		else{
+			reqPassword2.removeClass("error");
+			inputPassword2.removeClass("error");
+			return true;
+		}
+	}
+	function validateEmail(){
+		//NO hay nada escrito
+		if(inputEmail.val().length == 0){
+			reqEmail.addClass("error");
+			inputEmail.addClass("error");
+			return false;
+		}
+		// SI escrito, NO VALIDO email
+		else if(!inputEmail.val().match(/^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i)){
+			reqEmail.addClass("error");
+			inputEmail.addClass("error");
+			return false;
+		}
+		// SI rellenado, SI email valido
+		else{
+			reqEmail.removeClass("error");
+			inputEmail.removeClass("error");
+			return true;
+		}
+	}*/	
+//ready
+</script>
 </html>
-
-
