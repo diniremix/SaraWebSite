@@ -24,7 +24,6 @@
 					return false;
 					}
 				);
-
 				
 				//sortable, portlets
 				$(".column").sortable({
@@ -34,7 +33,7 @@
 				$(".sort").sortable({
 					connectWith: '.sort'
 				});
-				
+
 
 				$(".portlet").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
 				.find(".portlet-header")
@@ -61,7 +60,7 @@
 				// Dialog			
 				$('#dialog').dialog({
 					autoOpen: false,
-					width: 800,
+					width: 450,
 					buttons: {
 						"Aceptar": function() { 
 							$(this).dialog("close"); 
@@ -78,6 +77,25 @@
 					return false;
 				});
 
+				// Dialogo de nacimiento			
+				$('#dlgnac').dialog({
+					autoOpen: false,
+					width: 450,
+					buttons: {
+						"Aceptar": function() { 
+							$(this).dialog("close"); 
+						}, 
+						"Cancelar": function() { 
+							$(this).dialog("close"); 
+						} 
+					}
+				});
+				
+				// Dialogo link nacimiento
+				$('#dlglinknac').click(function(){
+					$('#dlgnac').dialog('open');
+					return false;
+				});
 				// Datepicker
 				$('#datepicker').datepicker({
 					inline: true

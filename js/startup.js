@@ -14,6 +14,9 @@ $(document).ready(function() {
 		$("#menupines").hide(10);
 		$("#menunupin").hide(10);
 		$("#menutpin").hide(10);
+		$("#menumatr").hide(10);
+		$("#menunumatr").hide(10);
+		$("#menutmatr").hide(10);
 	}
 	inicio();
 });

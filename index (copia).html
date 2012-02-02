@@ -113,7 +113,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="#" onclick='mostrarMatr();' title="Matricular estudiantes" class="tooltip">
+										<a href="#" onclick='' title="Matricular estudiantes" class="tooltip">
 											<img src="assets/icons/16_48x48.png" alt="" />
 											<span>Matriculas</span>
 										</a>
@@ -168,14 +168,27 @@
 								<ul class="dash">
 									<li>
 										<a href="#" onclick='nuevouser();' title="Nuevo usuario" class="tooltip">
-											<img src="assets/icons/users_two_48.png" alt="" />
+											<img src="assets/icons/emblem-people.png" alt="" />
 											<span>Nuevo usuario</span>
 										</a>
-									</li>									
+									</li>
 									<li>
-										<a href="#" onclick='alluser();' title="Busqueda de usuarios" class="tooltip">
+										<a href="#" onclick='mostrarppal();' title="Gestor de usuarios" class="tooltip">
+											<img src="assets/icons/users_two_48.png" alt="" />
+											<span>Usuarios</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" onclick='alluser();' title="Busqueda" class="tooltip">
 											<img src="assets/icons/logviewer.png" alt="" />
-											<span>Buscar usuarios</span>
+											<span>Busqueda de usuarios</span>
+										</a>
+									</li>
+									
+									<li>
+										<a href="#" title="Editar" class="tooltip">
+											<img src="assets/icons/alacarte.png" alt="" />
+											<span>Modificar usuario</span>
 										</a>
 									</li>
 								</ul>
@@ -196,7 +209,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="#" onclick='allPines();' title="Buscar un PIN" class="tooltip">
+										<a href="#" onclick='allPines();' title="Busqueda" class="tooltip">
 											<img src="assets/icons/alacarte.png" alt="" />
 											<span>Busqueda de Pines</span>
 										</a>
@@ -207,29 +220,6 @@
 						</div>
 						<!-- menu  de pines-->
 						
-						<!-- menu  de Matriculas-->
-						<div id="menumatr" class="menumatr">
-							<div class="pad20">
-							<!-- Big buttons -->
-								<ul class="dash">
-									<li>
-										<a href="#" onclick='nuevaMatr();' title="Matricular nuevo estudiante" class="tooltip">
-											<img src="assets/icons/16_48x48.png" alt="" />
-											<span>Nueva matricula</span>
-										</a>
-									</li>
-									<li>
-										<a href="#" onclick='allMatr();' title="Busqueda de estudiantes matriculados" class="tooltip">
-											<img src="assets/icons/alacarte.png" alt="" />
-											<span>Busqueda</span>
-										</a>
-									</li>
-								</ul>
-								<!-- End of Big buttons -->
-							</div>
-						</div>
-						<!-- menu  de Matriculas-->
-
 						<!-- menu nuevos usuarios-->
 						<div id="menunuser" class="menunuser">
 						<hr/>
@@ -319,7 +309,7 @@
 
 						<!-- formulario de PIN -->
 						<div id="menunupin" class="menunupin">
-						<hr/>
+						<!--<hr/>-->
 							<div class="pad20">
 								<form method="#" action="#" onsubmit = "return false;">
 								<!-- Fieldset -->
@@ -373,123 +363,6 @@
 						</div>							
 						<!-- formulario de PIN -->
 
-						<!-- formulario de Matriculas -->
-						<div id="menunumatr" class="menunumatr">
-						<hr/>
-							<div class="pad20">
-								<form method="#" action="#" onsubmit = "return false;">
-								<!-- Fieldset -->
-									<fieldset>
-										<legend>Formulario de Matriculas</legend>										
-										<p align="left">
-											<label for="identi">Identificaci&oacute;n:</label>
-											<input id="identi" name="identi" type="text" value="" />
-											<label for="dlglinknac">Nacimiento:</label>
-											<a href="#" class="button tooltip" title="buscar fecha de nacimiento!" id="dlglinknac"><span class="ui-icon ui-icon-newwin"></span>Ver</a>
-											
-										</p>
-										<p align="left">										
-											<label for="nombres">Nombres:</label>					
-											<input id="nombres" name="nombre" type="text" value="" />
-											<label for="apellidos">Apellidos:</label>
-											<input align="right" id="apellidos" name="apellidos" type="text" value="" />
-										</p>
-										<p>
-											<label for="casa">Direcci&oacute;n Resid:</label>
-											<input id="casa" name="casa" type="text" value="" />
-											<label for="tele">Telefono resid: </label>
-											<input id="tele" name="tele" type="text" value="" />
-										</p>										
-										<p>											
-											<label for="scivil">Estado civil:</label>
-											<select name="scivil" id="scivil">
-												<option value="0" selected>seleccione</option>
-												<option value="1" >Soltero(a)</option>
-												<option value="2" >Casado(a)</option>
-												<option value="3" >Viudo(a)</option>
-												<option value="3" >Divorciado(a)</option>
-												<option value="3" >Uni&oacute;n libre</option>
-											</select>
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-											<label for="strato">Estrato Social:</label>
-											<select name="strato" id="strato">
-												<option value="0" selected>seleccione</option>
-												<option value="1" >0</option>
-												<option value="2" >1</option>
-												<option value="3" >2</option>
-												<option value="3" >3</option>
-												<option value="3" >4</option>
-											</select>
-										</p>										
-										<p>
-											<label for="icfes">Codigo Icfes:</label>
-											<input id="icfes" name="icfes" type="text" value="" />
-											<label for="annop">A&ntilde;o presentaci&oacute;n:</label>
-											<select name="annop" id="annop">
-												<option value="0" selected>seleccione</option>
-												<option value="1" >2012</option>
-												<option value="2" >2011</option>
-												<option value="3" >2010</option>
-											</select>																																
-										</p>
-										<p>
-											<label for="email">Correo electr&oacute;nico:</label>
-											<input id="email" name="email" type="email" value="" />
-											<label for="ciudad">Ciudad:</label>
-											<select name="ciudad" id="ciudad">
-												<option value="0" selected>seleccione</option>
-												<option value="1" >Monteria</option>
-												<option value="2" >Ceret&eacute;</option>
-												<option value="3" >Lor&iacute;ca</option>
-											</select>
-										</p>
-										<p>
-											<label for="npin">Numero PIN: </label>
-											<input id="npin" name="npin" type="text" value="" />
-										</p>
-										<p>
-										</p>
-										<p>
-											<span class="validate_error">Todos los campos son requeridos.!</span>
-										</p>
-										<p align="center">
-										<input id="btmatr" name="btmatr" class="button" type="reset" value="Cancelar">
-										<input id="btmatm" name="btmatm" class="button" type="submit" value="Matricular">
-										</p>
-									</fieldset>
-										<!-- End of fieldset -->									
-								</form>
-							</div>
-						</div>							
-						<!-- formulario de Matriculas -->
-
-							<!-- Dialogo de nacimiento -->
-							<div id="dlgnac" title="Escoja la fecha de Nacimiento!">
-							<p>Favor Seleccione la fecha correspondiente a su <b>Nacimiento.</b></p>
-							<label for="pass">A&ntilde;o: </label>
-								<select name="tuser" id="tuser">
-									<option value="0" selected>seleccione</option>
-									<option value="1" >2012</option>
-									<option value="2" >2011</option>
-									<option value="3" >2010</option>
-								</select>
-								<label for="pass">Mes: </label>
-								<select name="tuser" id="tuser">
-									<option value="0" selected>seleccione</option>
-									<option value="1" >Enero</option>
-									<option value="2" >Febrero</option>
-									<option value="3" >Marzo</option>
-								</select><br>
-								<label for="pass">Dia: </label>
-								<select name="tuser" id="tuser">
-									<option value="0" selected>seleccione</option>
-									<option value="1" >1</option>
-									<option value="2" >2</option>
-									<option value="3" >3</option>
-								</select>
-							</div>
-							<!-- End oof Dialog -->
-
 						<!-- tabla de pines -->
 						<div id="menutpin" class="menutpin">
 							<hr/>
@@ -524,49 +397,8 @@
 								<a href="#" class="button"><span class="ui-icon ui-icon-print"></span>Imprimir</a>								
 							</p>
 							</div>
-						</div>												
-						<!-- tabla de pines -->
-
-						<!-- tabla de Matriculas -->
-						<div id="menutmatr" class="menutmatr">
-							<hr/>
-							<div class="pad20">
-							<table class="fullwidth" cellpadding="0" cellspacing="0" border="0">
-								<thead>
-									<tr>
-										<td><input type="checkbox" class="checkall" /></td>
-										<td>No.</td>
-										<td>Identificaci&oacute;n</td>
-										<td>C&oacute;digo Icfes</td>
-										<td>Estado</td>
-									</tr>
-								</thead>
-								<tbody>
-									<tr class="odd">
-										<td><input type="checkbox" /></td>
-										<td>1</td>
-										<td>10965813</td>
-										<td>SN54321</td>
-										<td><strong>Activo</strong></td>
-									</tr>
-									<tr>
-										<td><input type="checkbox" /></td>
-										<td>2</td>
-										<td>78965256</td>
-										<td>SN78945</td>
-										<td><strong>Inactivo</strong></td>
-									</tr>									
-								</tbody>
-							</table>
-							<p>
-								<a href="#" class="button" title="Eliminar una matricula"><span class="ui-icon ui-icon-trash"></span>Eliminar</a>
-								<a href="#" class="button"><span class="ui-icon ui-icon-extlink"></span>Exportar</a>								
-								<a href="#" class="button"><span class="ui-icon ui-icon-print"></span>Imprimir</a>								
-							</p>
-							</div>
-						</div>												
-						<!-- tabla de Matriculas -->
-						
+						</div>						
+						<!-- fin tabla de usuarios -->
 						</div><!-- Main Content -->
 				</div>
 			<!-- End of Main Content -->
@@ -596,68 +428,26 @@
 					
 					<!-- Listas -->
 					<div id="listas" class="listas">
-						<h2>Menu de Usuario</h2>
+						<h2>Lists / Navigation</h2>
 						<ul>
-							<li><a href="">Inicio</a></li>
-							<li><a href="">Usuarios</a>
+							<li><a href="">Lorem I"listas"sum</a></li>
+							<li><a href="">Artificial Intelligence</a></li>
+							<li><a href="">jQuery Power</a>
 								<ul>
-									<li><a href="">Nuevo usuario</a></li>
-									<li><a href="">Busqueda</a></li>
-									<!--<li><a href="">Lorem Ipsum</a>
+									<li><a href="">Lorem Ipsum</a></li>
+									<li><a href="">Artificial Intelligence</a></li>
+									<li><a href="">Lorem Ipsum</a>
 										<ul>
 											<li><a href="">Lorem Ipsum</a></li>
 											<li><a href="">Artificial Intelligence</a></li>
 											<li><a href="">Lorem Ipsum</a></li>
 											<li class="last"><a href="">Artificial Intelligence</a></li>
 										</ul>
-									</li>-->
+									</li>
+									<li class="last"><a href="">Artificial Intelligence</a></li>
 								</ul>
 							</li>
-							
-							<li><a href="">PIN</a>
-								<ul>
-									<li><a href="">Nuevo PIN</a></li>
-									<li><a href="">Busqueda</a></li>
-									<!--<li><a href="">Lorem Ipsum</a>
-										<ul>
-											<li><a href="">Lorem Ipsum</a></li>
-											<li><a href="">Artificial Intelligence</a></li>
-											<li><a href="">Lorem Ipsum</a></li>
-											<li class="last"><a href="">Artificial Intelligence</a></li>
-										</ul>
-									</li>-->
-								</ul>
-							</li>
-							
-							<li><a href="">Matriculas</a>
-								<ul>
-									<li><a href="">Matricular estudiante</a></li>
-									<li><a href="">Busqueda</a></li>
-									<!--<li><a href="">Lorem Ipsum</a>
-										<ul>
-											<li><a href="">Lorem Ipsum</a></li>
-											<li><a href="">Artificial Intelligence</a></li>
-											<li><a href="">Lorem Ipsum</a></li>
-											<li class="last"><a href="">Artificial Intelligence</a></li>
-										</ul>
-									</li>-->
-								</ul>
-							</li>
-							
-							<li><a href="">Notificaciones</a>
-								<ul>
-									<li><a href="">Matricular estudiante</a></li>
-									<li><a href="">Busqueda</a></li>
-									<!--<li><a href="">Lorem Ipsum</a>
-										<ul>
-											<li><a href="">Lorem Ipsum</a></li>
-											<li><a href="">Artificial Intelligence</a></li>
-											<li><a href="">Lorem Ipsum</a></li>
-											<li class="last"><a href="">Artificial Intelligence</a></li>
-										</ul>
-									</li>-->
-								</ul>
-							</li>
+							<li><a href="">Another category</a></li>
 						</ul>
 					</div>
 					<!-- End of Listas -->
@@ -702,9 +492,9 @@
 					<!-- Statistics -->
 					<div id="estadisticas" class="estadisticas">
 						<h2>Estadisticas</h2>
-						<p><b>Articulos:</b> 251</p>
-						<p><b>Comentarios:</b> 346</p>
-						<p><b>Usuarios:</b> 3</p>
+						<p><b>Articulos:</b> 221</p>
+						<p><b>Comentarios:</b> 192</p>
+						<p><b>Usuarios:</b> 4</p>
 						<p><br></p>
 					</div>
 					<!-- End of Statistics -->
@@ -730,17 +520,15 @@
 <!-- End of Footer -->
 </body>
 <script type="text/javascript">
+	
 	function mostrarppal(){		
 		console.log('llamada al mostrarppal');
 		$("#bhome").hide(10);	
 		$("#menuser").hide(300);
 		$("#menupines").hide(10);
-		$("#menumatr").hide(10);
 		$("#menuppal").show(200);
 
 	}
-
-	//menu de usuarios
 	function mostrarUser(){		
 		console.log('llamada al mostrarUser');
 		$("#bhome").toggle(10);
@@ -771,25 +559,6 @@
 		console.log('cargando todos los pines');
 		$("#menutpin").toggle(200);
 	}
-
-	//menu de matriculas
-	function mostrarMatr(){
-		console.log('cargando menus de matricula');		
-		$("#menuppal").hide(200);
-		$("#bhome").toggle(10);		
-		$("#menumatr").show(200);
-	}
-	function nuevaMatr(){
-		console.log('creando nueva matricula');
-		$("#menunumatr").toggle(100);
-	}
-	function allMatr(){
-		console.log('cargando todos las matriculas');
-		$("#menutmatr").toggle(200);
-	}
-
-
-
 	//
 	function validar(){	
 		var user = document.querySelectorAll('#menunuser input');
