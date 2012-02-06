@@ -8,7 +8,7 @@ $(document).ready(function() {
 		console.log('ocultando menus');
 		$("#bhome").hide(10);
 		$("#acordeon").hide(10);
-		$("#ordenables").hide(10);
+		//$("#ordenables").hide(10);
 		$("#menunuser").hide(10);
 		$("#menutuser").hide(10);
 		$("#menupines").hide(10);
