@@ -2,12 +2,6 @@
  echo '
 <!-- menu de usuarios-->
 <div id="menuser" class="menuser">
-<script type = "text/javascript">
-function llamar(){
-	console.log(\'llamando a alluser...\'):
-	alluser();
-}
-</script>
 	<div class="pad20">
 	<!-- Big buttons -->
 		<ul class="dash">

@@ -1,14 +1,14 @@
 <?php
 	require_once ("../xajax0_6/xajax_core/xajax.inc.php");
-	//conjunto de funciones para el manejo de usuarios
-	class UsuariosClass {
+	//conjunto de funciones para el manejo de PIN
+	class pinesClass {
 		var $conn;
 	 	var $host;
 	 	var $username;
 	 	var $password;
 	 	var $db;
 	 	
-	 	function UsuariosClass(){
+	 	function pinesClass(){
 	 		//Constructor
 	 		$this->host='localhost';
 	 		$this->username='root';
@@ -22,25 +22,24 @@
 			return $this->conn;
 		}
 		
-		function getUsuario($datoUser){
-			//busca un unico usuario para su modificacion 
+		function getPin($datoUser){
+			//busca un unico PIN para su modificacion 
 			$sql_query="SELECT * FROM `usuarios` WHERE identificacion=$datoUser";
 			$result = mysql_query($sql_query);			
 			$row=mysql_fetch_assoc($result);
 			return $row;		
 		}	
 				
-		function getUsuarios(){
-			//lista todos los usuarios
-			$sql_query="SELECT * FROM `usuarios`";
+		function getPines(){
+			//lista todos los PIN
+			$sql_query="SELECT * FROM `tiposusuarios`";
 			$result = mysql_query($sql_query);												
 			$consulta='<table class="fullwidth" cellpadding="0" cellspacing="0" border="0">
 			<thead>
 				<tr>
 					<td>Nº</td>
-					<td>Identificacion</td>
 					<td>Nombres</td>
-					<td>Usuario</td>
+					<td>Descripcion</td>
 					<td>Acciones</td>
 				</tr>
 			</thead><tbody>';
@@ -48,17 +47,16 @@
 			$i=0;
 			while ($row=mysql_fetch_array($result)){
 				$i++;
-				$ide=$row['identificacion'];
+				$ide=$row['id'];
 				if($i%2!=0){
 					$consulta.= $clase;
 				}else{
 					$consulta.='<tr>';
 				}
 				$consulta.= '   <td>'.$row['id'].'</td>
-								<td>'.$row['identificacion'].'</td>
-								<td>'.$row['nombres'].' '.$row['apellidos'].'</td>
-								<td><strong>'.$row['user'].'</strong></td>
-								<td><a href="#" onclick="xajax_usuarios(\''.$ide.'\',\'eliminar\'); return false;"class="button" title="Eliminar un usuario"\''. $ide.'\'"><span class="ui-icon ui-icon-trash"></span></a><a href="#" onclick="xajax_usuarios(\''.$ide.'\',\'modificar\'); return false;"class="button" title="Modificar un usuario"><span class="ui-icon ui-icon-pencil"></span></a>
+								<td>'.$row['nombre'].'</td>
+								<td>'.$row['descripcion'].'</td>
+								<td><a href="#" onclick="xajax_pines(\''.$ide.'\',\'eliminar\'); return false;"class="button" title="Eliminar un usuario"\''. $ide.'\'"><span class="ui-icon ui-icon-trash"></span></a><a href="#" onclick="xajax_pines(\''.$ide.'\',\'modificar\'); return false;"class="button" title="Modificar un usuario"><span class="ui-icon ui-icon-pencil"></span></a>
 								</td>
 							</tr>';							
 			}
@@ -67,8 +65,8 @@
 			return $consulta;						
 		}
 			
-		function setUsuario($form){
-			//guarda un usuario
+		function setPin($form){
+			//guarda un PIN
 			$identi=$form['identi'];
 			$nombres=$form['nombres'];
 			$apellidos=$form['apellidos'];
@@ -80,29 +78,29 @@
 			$result = mysql_query($sql_query);
 			return true;
 		}	
-		function delUsuario($data){
-			//eliminar un usuario
-			$query_del="DELETE FROM `usuarios` WHERE `identificacion`=$data";
+		function delPin($data){
+			//eliminar un PIN
+			$query_del="DELETE FROM `tiposusuarios` WHERE `id`=$data";			
 			$result1 = mysql_query($query_del);			
 			return true;							
 		}
 		
 	}//conexionClass 
 	
-	function usuarios($formData,$param){
+	function pines($formData,$param){
 		//menu ppal
 		$objResponse = new xajaxResponse();
-		$objconexion = new UsuariosClass();
+		$objconexion = new pinesClass();
 		$objconexion->connect();
 		$div='';
 		switch ($param) {
 			case 'buscarTodo' :
-					$objResponse->call("alluser");
-					$div=$objconexion->getUsuarios();
-					$objResponse->assign("msgbuser","innerHTML",$div);										
+					$objResponse->call("allPines");
+					$div=$objconexion->getPines();
+					$objResponse->assign("msgbpin","innerHTML",$div);										
 			break;
 			case 'guardar' :
-					if($ok=$objconexion->setUsuario($formData)){
+					if($ok=$objconexion->setPin($formData)){
 						$div='<div id="tipsuccess" name="tipsuccess" class="message success close"><h2>Felicidades!</h2><p>El usuario ha sido guardado con exito.</p></div>';						
 					}else{
 						$div='<div id="tiperror" name="tiperror" class="message error close"><h2>Alerta!</h2><p>El usuario NO pudo ser guardado en la base de datos.</p></div>';
@@ -110,15 +108,15 @@
 					$objResponse->assign("msguser","innerHTML",$div);
 			break;	
 			case 'eliminar' :
-				$objResponse->alert('Eliminando usuario');
-				if($ok=$objconexion->delUsuario($formData)){
-					$objResponse->call("alluser");
-					//$objResponse->call("alluser");
+				$objResponse->alert('Eliminando PIN');
+				if($ok=$objconexion->delPin($formData)){
+					$objResponse->call("allPines");
+					//$objResponse->call("allPines");
 				}
 			break;
 			case 'modificar' :
 				$objResponse->alert('modificando datos de usuario');			
-				if($ok=$objconexion->getUsuario($formData)){
+				if($ok=$objconexion->getPin($formData)){
 					$objResponse->assign("identi", "value", $ok['identificacion']);
 					$objResponse->assign("nombres", "value", $ok['nombres']);
 					$objResponse->assign("apellidos", "value", $ok['apellidos']);
@@ -137,9 +135,9 @@
 		return $objResponse;
 	}
 
-/*$xajax = new xajax();
-$xajax->configure("debug", true);
-$xajax->register(XAJAX_FUNCTION,"usuarios");
-$xajax->configure('javascript URI','../xajax0_6');
-$xajax->processRequest(); */			
+/*$xajaxp = new xajax();
+$xajaxp->configure("debug", true);
+$xajaxp->register(XAJAX_FUNCTION,"pines");
+$xajaxp->configure('javascript URI','../xajax0_6');
+$xajaxp->processRequest(); 			*/
 ?>

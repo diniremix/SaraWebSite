@@ -12,7 +12,7 @@ echo '
 				</a>
 			</li>
 			<li>
-				<a href="#" onclick=\'allPines();\' title="Buscar un PIN" class="tooltip">
+				<a href="#" onclick="xajax_pines(\'data\',\'buscarTodo\'); return false;" title="Buscar un PIN" class="tooltip">
 					<img src="assets/icons/alacarte.png" alt="" />
 					<span>Busqueda de Pines</span>
 				</a>

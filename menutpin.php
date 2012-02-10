@@ -4,6 +4,10 @@ echo '
 <div id="menutpin" class="menutpin">
 	<hr/>
 	<div class="pad20">
+	<div id="msgbpin" name="msgbpin">
+		</div>
+		<p>
+		</p><!--
 	<table class="fullwidth" cellpadding="0" cellspacing="0" border="0">
 		<thead>
 			<tr>
@@ -32,7 +36,7 @@ echo '
 		<a href="#" class="button" title="Eliminar un usuario"><span class="ui-icon ui-icon-trash"></span>Eliminar</a>
 		<a href="#" class="button"><span class="ui-icon ui-icon-extlink"></span>Exportar</a>								
 		<a href="#" class="button"><span class="ui-icon ui-icon-print"></span>Imprimir</a>								
-	</p>
+	</p>-->
 	</div>
 </div>												
 <!-- tabla de pines -->
