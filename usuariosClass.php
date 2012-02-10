@@ -35,15 +35,15 @@
 			$sql_query="SELECT * FROM `usuarios`";
 			$result = mysql_query($sql_query);												
 			$consulta='<table class="fullwidth" cellpadding="0" cellspacing="0" border="0">
-			<thead>
-				<tr>
-					<td>Nº</td>
-					<td>Identificacion</td>
-					<td>Nombres</td>
-					<td>Usuario</td>
-					<td>Acciones</td>
-				</tr>
-			</thead><tbody>';
+		<thead>
+			<tr>
+				<td>No.</td>
+				<td>identificaci&oacute;n</td>
+				<td>Usuario</td>
+				<td>Nombres</td>
+				<td>Acciones</td>
+			</tr>
+		</thead><tbody>';
 			$clase='<tr class="odd">';
 			$i=0;
 			while ($row=mysql_fetch_array($result)){
@@ -56,9 +56,10 @@
 				}
 				$consulta.= '   <td>'.$row['id'].'</td>
 								<td>'.$row['identificacion'].'</td>
-								<td>'.$row['nombres'].' '.$row['apellidos'].'</td>
 								<td><strong>'.$row['user'].'</strong></td>
-								<td><a href="#" onclick="xajax_usuarios(\''.$ide.'\',\'eliminar\'); return false;"class="button" title="Eliminar un usuario"\''. $ide.'\'"><span class="ui-icon ui-icon-trash"></span></a><a href="#" onclick="xajax_usuarios(\''.$ide.'\',\'modificar\'); return false;"class="button" title="Modificar un usuario"><span class="ui-icon ui-icon-pencil"></span></a>
+								<td>'.$row['nombres'].' '.$row['apellidos'].'</td>
+								<td><a href="#" onclick="xajax_usuarios(\''.$ide.'\',\'eliminar\'); return false;" class="button" title="Eliminar un usuario"\''. $ide.'\'"><span class="ui-icon ui-icon-trash"></span></a>
+									<a href="#" onclick="xajax_usuarios(\''.$ide.'\',\'modificar\'); return false;" class="button" title="Modificar un usuario"><span class="ui-icon ui-icon-pencil"></span></a>
 								</td>
 							</tr>';							
 			}
@@ -136,10 +137,4 @@
 		
 		return $objResponse;
 	}
-
-/*$xajax = new xajax();
-$xajax->configure("debug", true);
-$xajax->register(XAJAX_FUNCTION,"usuarios");
-$xajax->configure('javascript URI','../xajax0_6');
-$xajax->processRequest(); */			
 ?>

@@ -6,7 +6,7 @@ echo '
 	<!-- Big buttons -->
 		<ul class="dash">
 			<li>
-				<a href="#" onclick=\'nuevoPin();\' title="Nuevo Pin" class="tooltip">
+				<a href="#" onclick="xajax_pines(\'data\',\'cargarPin\'); return false;" title="Nuevo Pin" class="tooltip">
 					<img src="assets/icons/8_48x48.png" alt="" />
 					<span>Nuevo PIN</span>
 				</a>

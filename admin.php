@@ -1,15 +1,5 @@
 <?php 
-	require_once("usuariosClass.php");
-	require_once("pinesClass.php");
-	$xajax = new xajax();
-	$xajax->configure("debug", true);
-	$xajax->register(XAJAX_FUNCTION,"usuarios");
-	$xajax->register(XAJAX_FUNCTION,"pines");
-	
-	$xajax->configure("debug", true);
-	$xajax->configure('javascript URI','../xajax0_6');
-	$xajax->processRequest(); 			
-	$xajax->printJavascript(); 
+	require_once("xajaxFunctions.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -93,12 +83,15 @@
 							include_once('menutuser.php'); 
 						?>
 						<?php
+							//implementado
 							include_once('menupines.php'); 
 						?>	
 						<?php
+							//implementado
 							include_once('menunupin.php'); 
 						?>
 						<?php
+							//implementado
 							include_once('menutpin.php'); 
 						?>																				
 						<?php

@@ -22,24 +22,28 @@
 			return $this->conn;
 		}
 		
-		function getPin($datoUser){
+		function getPin(){
 			//busca un unico PIN para su modificacion 
-			$sql_query="SELECT * FROM `usuarios` WHERE identificacion=$datoUser";
-			$result = mysql_query($sql_query);			
-			$row=mysql_fetch_assoc($result);
-			return $row;		
+			//$sql_query="SELECT * FROM `usuarios` WHERE identificacion=$datoUser";
+			//$result = mysql_query($sql_query);			
+			//$row=mysql_fetch_assoc($result);
+			for ($i=2012; $i<=1990 ; $i--) { 
+				$anno.='<option value="'.$i.'" >'.$i.'</option>';
+			}	
+			$row[1].$anno;	
+			return $row;
 		}	
 				
 		function getPines(){
 			//lista todos los PIN
-			$sql_query="SELECT * FROM `tiposusuarios`";
+			$sql_query="SELECT * FROM `pines`";
 			$result = mysql_query($sql_query);												
 			$consulta='<table class="fullwidth" cellpadding="0" cellspacing="0" border="0">
 			<thead>
 				<tr>
 					<td>Nº</td>
-					<td>Nombres</td>
-					<td>Descripcion</td>
+					<td>PIN</td>
+					<td>Estado</td>
 					<td>Acciones</td>
 				</tr>
 			</thead><tbody>';
@@ -48,39 +52,45 @@
 			while ($row=mysql_fetch_array($result)){
 				$i++;
 				$ide=$row['id'];
+				if($row['estado']==1){
+					$estado="Activo";
+				}else{
+					$estado="Inactivo";					
+				}
 				if($i%2!=0){
 					$consulta.= $clase;
 				}else{
 					$consulta.='<tr>';
 				}
+
 				$consulta.= '   <td>'.$row['id'].'</td>
-								<td>'.$row['nombre'].'</td>
-								<td>'.$row['descripcion'].'</td>
-								<td><a href="#" onclick="xajax_pines(\''.$ide.'\',\'eliminar\'); return false;"class="button" title="Eliminar un usuario"\''. $ide.'\'"><span class="ui-icon ui-icon-trash"></span></a><a href="#" onclick="xajax_pines(\''.$ide.'\',\'modificar\'); return false;"class="button" title="Modificar un usuario"><span class="ui-icon ui-icon-pencil"></span></a>
+								<td>'.$row['npines'].'</td>
+								<td>'.$estado.'</td>
+								<td><a href="#" onclick="xajax_pines(\''.$ide.'\',\'eliminar\'); return false;" class="button" title="Eliminar un PIN"\''. $ide.'\'"><span class="ui-icon ui-icon-trash"></span></a>
 								</td>
 							</tr>';							
 			}
-			$consulta.='</tbody></table>
-	';
+			$consulta.='</tbody></table>';
 			return $consulta;						
 		}
 			
 		function setPin($form){
-			//guarda un PIN
-			$identi=$form['identi'];
-			$nombres=$form['nombres'];
-			$apellidos=$form['apellidos'];
-			$user=$form['user'];
-			$pass=md5($form['pass']);
-			$tuser=$form['tuser'];
-			$sql_query="INSERT INTO `usuarios` (`identificacion`,`nombres`,`apellidos`,`user`,`contrasenna`,`usuario_tipo`)";
-			$sql_query.=" VALUES($identi,'$nombres','$apellidos','$user','$pass',$tuser)";
+			//genera y guarda un PIN
+			$anno=$form['tanno'];
+			$mesa=$form['mesa'];
+			$mesb=$form['mesb'];			
+			$code=$form['code'];
+			$pinGen=md5($anno.$mesa.$mesb.$code);
+
+			$sql_query="INSERT INTO `pines` (`npines`,`estado`)";
+			$sql_query.=" VALUES('$pinGen',1)";
 			$result = mysql_query($sql_query);
 			return true;
 		}	
+
 		function delPin($data){
 			//eliminar un PIN
-			$query_del="DELETE FROM `tiposusuarios` WHERE `id`=$data";			
+			$query_del="DELETE FROM `pines` WHERE `id`=$data";			
 			$result1 = mysql_query($query_del);			
 			return true;							
 		}
@@ -99,32 +109,31 @@
 					$div=$objconexion->getPines();
 					$objResponse->assign("msgbpin","innerHTML",$div);										
 			break;
+			case 'cargarPin' :
+					$objResponse->call("nuevoPin");
+					/*if($ok=$objconexion->getPin()){
+						$objResponse->assign("tanno", "value", $ok[1]);
+						//$objResponse->assign("nombres", "value", $ok['nombres']);
+						//$objResponse->assign("apellidos", "value", $ok['apellidos']);
+					}*/
+					
+					//$objResponse->assign("msgbpin","innerHTML",$div);										
+			break;
+
 			case 'guardar' :
 					if($ok=$objconexion->setPin($formData)){
-						$div='<div id="tipsuccess" name="tipsuccess" class="message success close"><h2>Felicidades!</h2><p>El usuario ha sido guardado con exito.</p></div>';						
+						$div='<div id="tipsuccess" name="tipsuccess" class="message success close"><h2>Felicidades!</h2><p>El PIN ha sido guardado con exito.</p></div>';						
 					}else{
-						$div='<div id="tiperror" name="tiperror" class="message error close"><h2>Alerta!</h2><p>El usuario NO pudo ser guardado en la base de datos.</p></div>';
+						$div='<div id="tiperror" name="tiperror" class="message error close"><h2>Alerta!</h2><p>El PIN fue generado, pero <strong>NO</strong> pudo ser guardado en la base de datos.</p></div>';
 					}
-					$objResponse->assign("msguser","innerHTML",$div);
+					$objResponse->assign("msgpin","innerHTML",$div);
+					//$objResponse->call("<script>$('#msgpin').hide(2000);</script>");
 			break;	
 			case 'eliminar' :
 				$objResponse->alert('Eliminando PIN');
 				if($ok=$objconexion->delPin($formData)){
 					$objResponse->call("allPines");
 					//$objResponse->call("allPines");
-				}
-			break;
-			case 'modificar' :
-				$objResponse->alert('modificando datos de usuario');			
-				if($ok=$objconexion->getPin($formData)){
-					$objResponse->assign("identi", "value", $ok['identificacion']);
-					$objResponse->assign("nombres", "value", $ok['nombres']);
-					$objResponse->assign("apellidos", "value", $ok['apellidos']);
-					$objResponse->assign("user", "value", $ok['user']);
-					$objResponse->assign("pass", "value", $ok['contrasenna']);
-					$objResponse->assign("tuser", "value", $ok['usuario_tipo']);
-					$objResponse->call("alluser");
-					$objResponse->call("nuevouser");
 				}
 			break;
 			default :
@@ -134,10 +143,4 @@
 		
 		return $objResponse;
 	}
-
-/*$xajaxp = new xajax();
-$xajaxp->configure("debug", true);
-$xajaxp->register(XAJAX_FUNCTION,"pines");
-$xajaxp->configure('javascript URI','../xajax0_6');
-$xajaxp->processRequest(); 			*/
 ?>
