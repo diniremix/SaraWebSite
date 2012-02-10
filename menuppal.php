@@ -6,19 +6,19 @@ echo '
 	<!-- Big buttons -->
 		<ul class="dash">
 			<li>
-				<a href="#" onclick=\'mostrarUser();\' title="Gestor de usuarios" class="tooltip">
+				<a href="#" onclick="mostrarUser();" title="Gestor de usuarios" class="tooltip">
 					<img src="assets/icons/users_two_48.png" alt="" />
 					<span>Usuarios</span>
 				</a>
 			</li>
 			<li>
-				<a href="#" onclick=\'mostrarPin();\' title="Generar un nuevo Pin" class="tooltip">
+				<a href="#" onclick="mostrarPin();" title="Generar un nuevo Pin" class="tooltip">
 					<img src="assets/icons/8_48x48.png" alt="" />
 					<span>Pin &uacute;nico</span>
 				</a>
 			</li>
 			<li>
-				<a href="#" onclick=\'mostrarMatr();\' title="Matricular estudiantes" class="tooltip">
+				<a href="#" onclick="mostrarMatr();" title="Matricular estudiantes" class="tooltip">
 					<img src="assets/icons/16_48x48.png" alt="" />
 					<span>Matriculas</span>
 				</a>

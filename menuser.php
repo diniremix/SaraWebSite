@@ -2,6 +2,12 @@
  echo '
 <!-- menu de usuarios-->
 <div id="menuser" class="menuser">
+<script type = "text/javascript">
+function llamar(){
+	console.log(\'llamando a alluser...\'):
+	alluser();
+}
+</script>
 	<div class="pad20">
 	<!-- Big buttons -->
 		<ul class="dash">
@@ -12,7 +18,7 @@
 				</a>
 			</li>									
 			<li>
-				<a href="#" onclick=\'alluser();\' title="Busqueda de usuarios" class="tooltip">
+				<a href="#" onclick="xajax_usuarios(\'data\',\'buscarTodo\'); return false;" title="Busqueda de usuarios" class="tooltip">
 					<img src="assets/icons/logviewer.png" alt="" />
 					<span>Buscar usuarios</span>
 				</a>

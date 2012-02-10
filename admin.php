@@ -1,3 +1,7 @@
+<?php 
+	require_once("usuariosClass.php");
+	$xajax->printJavascript(); 
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -20,7 +24,7 @@
 		<script type="text/javascript" src="js/superfish.js"></script>
 		<script type="text/javascript" src="js/custom.js"></script>
 		<script type="text/javascript" src="js/startup.js"></script>		
-		<!-- End of Libraries -->	
+		<!-- End of Libraries -->			
 	</head>
 	<body>
 <!-- Container -->
@@ -47,8 +51,7 @@
 				?>
 				<?php
 					include_once('search.php'); 
-				?>	
-				
+				?>					
 			</div>
 			<!-- End of Header -->
 			
@@ -69,12 +72,15 @@
 							include_once('menuppal.php'); 
 						?>							
 						<?php
+							//implementado
 							include_once('menuser.php'); 
-						?>
+						?>						
 						<?php
+							//implementado
 							include_once('menunuser.php'); 
 						?>
 						<?php
+							//implementado
 							include_once('menutuser.php'); 
 						?>
 						<?php
@@ -102,17 +108,17 @@
 				</div>
 			<!-- End of Main Content -->
 				<?php
-					include_once('sidebar.php'); 
+					//include_once('sidebar.php'); 
 				?>			
 			</div>
 		<!-- End of bgwrap -->
 	</div>
 	<!-- End of Container -->
 	<?php
-		include_once('footer.php'); 
+		//include_once('footer.php'); 
 	?>
 </body>
 <?php
-	include_once('menujs.php'); 
+include_once('menujs.php'); 	
 ?>
 </html>

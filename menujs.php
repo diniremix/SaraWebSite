@@ -13,7 +13,7 @@ echo '
 
 	//menu de usuarios
 	function mostrarUser(){		
-		console.log(\'llamada al mostrarUser\');
+		//console.log(\'llamada al mostrarUser\');
 		$("#bhome").toggle(10);
 		$("#menuppal").hide(200);
 		$("#menuser").show(300);
