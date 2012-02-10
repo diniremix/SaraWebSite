@@ -1,0 +1,37 @@
+#Favor NO editar este archivo
+#No mostrar contenido de carpetas
+DirectoryIndex index.php index.html
+Options -Indexes +MultiViews +FollowSymlinks
+IndexIgnore *
+
+#redirecciones
+#Redirect 301 /sigei/logout.php /sigei/index.php
+#Redirect 301 /sigei/logeo.php /sigei/dashboard.php
+#Redirect 302 /sigei/logout.php /sigei/index.php
+#Redirect 302 /sigei/logeo.php /sigei/dashboard.php
+
+#Redirect an entire site
+#Redirect 301 / http://nx86.co.cc/
+
+#descargar sin abrir en el navegador
+AddType application/octet-stream .csv
+AddType application/octet-stream .doc
+AddType application/octet-stream .ppt
+AddType application/octet-stream .xls
+AddType application/octet-stream .docx
+AddType application/octet-stream .pptx
+AddType application/octet-stream .xlsx
+AddType application/octet-stream .avi
+AddType application/octet-stream .mpg
+AddType application/octet-stream .mp4
+AddType application/octet-stream .mov
+AddType application/octet-stream .pdf
+
+#Errores de documentos
+ErrorDocument 400 /sara/40x.html
+ErrorDocument 401 /sara/40x.html
+ErrorDocument 403 /sara/40x.html
+ErrorDocument 404 /sara/40x.html
+ErrorDocument 500 /sara/50x.html
+
+

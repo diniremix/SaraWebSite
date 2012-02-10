@@ -60,12 +60,14 @@
 			<!-- Main Content -->
 				<div id="content">
 					<div id="main">
-						<h1>Bienvenido, <span>Usuario</span>!</h1>
+						<!--<h1>Reporte de <span>PIN</span></h1>
+						<p>Sistema Administrativo de Registro Acad&eacute;mico</p>-->
+						<h1>Bienvenido, <span>Admin</span>!</h1>
 						<p>Qu&eacute; quieres hacer hoy?</p>
 													
 						<div id="bhome" name="bhome">
 							<a href="#" onclick='mostrarppal();' class="button" title="Home!"><span class="ui-icon ui-icon-home"></span>Inicio</a>
-						</div>		
+						</div>
 											
 						<?php
 							include_once('menuppal.php'); 
@@ -110,14 +112,14 @@
 				</div>
 			<!-- End of Main Content -->
 				<?php
-					//include_once('sidebar.php'); 
+					include_once('sidebar.php'); 
 				?>			
 			</div>
 		<!-- End of bgwrap -->
 	</div>
 	<!-- End of Container -->
 	<?php
-		//include_once('footer.php'); 
+		include_once('footer.php'); 
 	?>
 </body>
 <?php

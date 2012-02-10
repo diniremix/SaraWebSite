@@ -2,7 +2,7 @@
 echo '
 <!-- Meta information -->
 <div class="meta">
-	<p>Bienvenido, Usuario! 
+	<p>Bienvenido, Admin! 
 		<a href="#" title="1 mensaje nuevo aqu&iacute;!" class="tooltip">1 mensaje(s)!</a>
 	</p>
 	<ul>

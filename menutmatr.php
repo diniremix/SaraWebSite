@@ -34,7 +34,7 @@ echo '
 	<p>
 		<a href="#" class="button" title="Eliminar una matricula"><span class="ui-icon ui-icon-trash"></span>Eliminar</a>
 		<a href="#" class="button"><span class="ui-icon ui-icon-extlink"></span>Exportar</a>								
-		<a href="#" class="button"><span class="ui-icon ui-icon-print"></span>Imprimir</a>								
+		<a href="matrPdf.php" class="button"><span class="ui-icon ui-icon-print"></span>Imprimir</a>								
 	</p>
 	</div>
 </div>												

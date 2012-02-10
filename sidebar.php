@@ -3,7 +3,7 @@ echo '
 <!-- Sidebar -->
 <div id="sidebar">
 
-	<!-- Listas -->
+	<!-- Listas --><!--
 	<div id="listas" class="listas">
 		<h2>Menu de Usuario</h2>
 		<ul>
@@ -36,7 +36,7 @@ echo '
 				</ul>
 			</li>
 		</ul>
-	</div>
+	</div>-->
 	<!-- End of Listas -->
 
 	<!-- Datepicker -->
@@ -49,8 +49,8 @@ echo '
 	<!-- Statistics -->
 	<div id="estadisticas" class="estadisticas">
 		<h2>Estadisticas</h2>
-		<p><b>Articulos:</b> 251</p>
-		<p><b>Comentarios:</b> 346</p>
+		<!--<p><b>Articulos:</b> 251</p>
+		<p><b>Comentarios:</b> 346</p>-->
 		<p><b>Usuarios:</b> 3</p>
 		<p><br></p>
 	</div>

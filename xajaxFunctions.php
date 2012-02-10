@@ -12,7 +12,7 @@
 	$xajax->register(XAJAX_FUNCTION,"pines");
 	
 	//desactivar modo debug para produccion
-	$xajax->configure("debug", true);
+	//$xajax->configure("debug", true);
 	$xajax->configure('javascript URI','../xajax0_6');
 	$xajax->processRequest(); 			
 	$xajax->printJavascript(); 
