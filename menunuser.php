@@ -7,7 +7,8 @@ echo '
 	<!-- Big buttons -->
 		<form id="fnuser" name="fnuser" onsubmit = "return false;">
 		<!-- Fieldset -->
-		<div id="msguser" name="msguser">			
+		<div id="msguser" name="msguser">
+			<!-- mensaje de xajax-->						
 		</div>
 			<fieldset>
 				<legend>Registro de usuarios nuevos</legend>
