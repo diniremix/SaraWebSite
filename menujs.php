@@ -8,7 +8,6 @@ echo '
 		$("#menupines").hide(10);
 		$("#menumatr").hide(10);
 		$("#menuppal").show(200);
-
 	}
 
 	//menu de usuarios
@@ -59,6 +58,16 @@ echo '
 		$("#menutmatr").toggle(200);
 	}
 
+	function recpass(){
+		console.log(\'cargando boxrecpass\');
+		$("#boxlogin").hide(200);
+		$("#boxrecpass").show(200);
+	}
+	function login(){
+		console.log(\'cargando boxlogin\');
+		$("#boxrecpass").hide(200);
+		$("#boxlogin").show(200);
+	}
 
 
 	//

@@ -7,7 +7,7 @@ echo '
 	</p>
 	<ul>
 		<li>
-			<a href="login.html" title="Cerrar tu sesi&oacute;n" class="tooltip">
+			<a href="index.php" title="Cerrar tu sesi&oacute;n" class="tooltip">
 				<span class="ui-icon ui-icon-power"></span>Salir</a>
 		</li>
 		<li>

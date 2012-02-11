@@ -1,5 +1,7 @@
-<?php 
-	require_once("xajaxFunctions.php");
+<?php
+	session_start();
+	if (isset($_SESSION['session_login']) && isset($_SESSION['session_rol']) ){
+		require_once("xajaxFunctions.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -126,3 +128,11 @@
 include_once('menujs.php'); 	
 ?>
 </html>
+<?php
+}
+else{
+	echo"<div class='status error'>Acceso no autorizado al sistema SARA.</div>";
+	echo"<a href='index.php'>Iniciar Sesi&oacute;n</a>"; 
+}
+?>
+

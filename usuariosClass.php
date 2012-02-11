@@ -1,14 +1,14 @@
 <?php
 	require_once ("../xajax0_6/xajax_core/xajax.inc.php");
 	//conjunto de funciones para el manejo de usuarios
-	class UsuariosClass {
+	class usuariosClass {
 		var $conn;
 	 	var $host;
 	 	var $username;
 	 	var $password;
 	 	var $db;
 	 	
-	 	function UsuariosClass(){
+	 	function usuariosClass(){
 	 		//Constructor
 	 		$this->host='localhost';
 	 		$this->username='root';
@@ -93,7 +93,7 @@
 	function usuarios($formData,$param){
 		//menu ppal
 		$objResponse = new xajaxResponse();
-		$objconexion = new UsuariosClass();
+		$objconexion = new usuariosClass();
 		$objconexion->connect();
 		$div='';
 		switch ($param) {
