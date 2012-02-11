@@ -24,6 +24,7 @@
 		
 		function getUsuario($datoUser){
 			//busca por el usuario que se logea y crea la sesion
+			session_start();
 			$user=$datoUser['username'];
 			$contrasenna=$datoUser['password'];
 			//$contrasenna=md5($contrasenna);
@@ -76,7 +77,7 @@
 		switch ($param) {
 			case 'login' :
 					if($ok=$objconexion->getUsuario($formData)){
-						$objResponse->redirect( "http://localhost/sara/index.php" );
+						$objResponse->redirect( "index.php" );
 					}else{
 						$div='<div align="center" id="tiperror" name="tiperror" class="message error close"><h2>Lo sentimos!</h2><p>El usuario con que intenta iniciar sesi&oacute;n no se encuentra en la base de datos.</p></div>';
 						$objResponse->assign("msglogin","innerHTML",$div);				

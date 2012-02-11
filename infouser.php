@@ -2,12 +2,12 @@
 echo '
 <!-- Meta information -->
 <div class="meta">
-	<p>Bienvenido, Admin! 
+	<p>Bienvenido, '.$_SESSION['session_login'].'! 
 		<a href="#" title="1 mensaje nuevo aqu&iacute;!" class="tooltip">1 mensaje(s)!</a>
 	</p>
 	<ul>
 		<li>
-			<a href="index.php" title="Cerrar tu sesi&oacute;n" class="tooltip">
+			<a href="logout.php" title="Cerrar tu sesi&oacute;n" class="tooltip">
 				<span class="ui-icon ui-icon-power"></span>Salir</a>
 		</li>
 		<li>

@@ -64,7 +64,7 @@
 					<div id="main">
 						<!--<h1>Reporte de <span>PIN</span></h1>
 						<p>Sistema Administrativo de Registro Acad&eacute;mico</p>-->
-						<h1>Bienvenido, <span>Admin</span>!</h1>
+						<h1>Bienvenido, <span><?php echo $_SESSION['session_login'];?></span>!</h1>
 						<p>Qu&eacute; quieres hacer hoy?</p>
 													
 						<div id="bhome" name="bhome">
@@ -97,7 +97,7 @@
 						<?php
 							//implementado
 							include_once('menutpin.php'); 
-						?>																				
+						?>		
 						<?php
 							include_once('menumatr.php'); 
 						?>
