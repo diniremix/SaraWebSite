@@ -137,7 +137,7 @@
 	$pdf->AddPage();
 	$pdf->Ln(5);
 	//consultas para generar las tablas 
-	$pdf->Table('SELECT * FROM `usuarios`');	
+	$pdf->Table('SELECT id as "Nº",nombres,apellidos,estrato,ciudad,cicfes as "Icfes",npin as "PIN" FROM `matriculas` WHERE estado>=1');	
 	//Pie de pagina
 	$pdf->Ln(120);
 	$pdf->Cell(0,0,'Sistema Administrativo de Registro Académico SARA V. 0.3',0,0,'L');

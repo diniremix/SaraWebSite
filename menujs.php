@@ -68,7 +68,18 @@ echo '
 		$("#boxrecpass").hide(200);
 		$("#boxlogin").show(200);
 	}
-
+	
+	function dlgfdnac(danno,dmes,ddia){
+		if (!isNaN(danno)&&!isNaN(dmes)&&!isNaN(ddia)){
+			console.log(\'valor de: danno \'+danno);
+			console.log(\'valor de: dmes \'+dmes);
+			console.log(\'valor de: ddia \'+ddia);
+		}
+		console.log(\'limpiando...\');			
+		document.querySelector(\'#tnac\').value="0";
+		document.querySelector(\'#tmes\').value="0";
+		document.querySelector(\'#tdia\').value="0";
+	}
 
 	//
 	function validar(){	

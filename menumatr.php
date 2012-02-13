@@ -12,7 +12,7 @@ echo '
 				</a>
 			</li>
 			<li>
-				<a href="#" onclick=\'allMatr();\' title="Busqueda de estudiantes matriculados" class="tooltip">
+				<a href="#" onclick="xajax_matriculas(\'data\',\'buscarTodo\'); return false;" title="Busqueda de estudiantes matriculados" class="tooltip">
 					<img src="assets/icons/alacarte.png" alt="" />
 					<span>Busqueda</span>
 				</a>

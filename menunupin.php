@@ -15,9 +15,11 @@ echo '
 					<label for="tanno">a&ntilde;o: </label>
 					<select name="tanno" id="tanno">
 						<option value="0" selected>seleccione</option>
-						';?>
+						';?>						
 						<?php
-							for ($i=2012;$i>=2000;$i--) { 
+							$i=date("Y");
+							$anno="";
+							for ($i;$i>=2000;$i--) { 
 								$anno.='<option value="'.$i.'">'.$i.'</option>';
 							}
 							echo $anno;

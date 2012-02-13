@@ -69,10 +69,12 @@
 							$(this).dialog("close"); 
 						} 
 					}
+					
 				});
 				
 				// Dialog Link
 				$('#dialog_link').click(function(){
+					//console.log('cargando dialogo');
 					$('#dialog').dialog('open');
 					return false;
 				});
@@ -83,9 +85,15 @@
 					width: 450,
 					buttons: {
 						"Aceptar": function() { 
+							var anno=document.querySelector('#tnac').value;
+							var mes=document.querySelector('#tmes').value;
+							var dia=document.querySelector('#tdia').value;
+							dlgfdnac(anno,mes,dia);							
 							$(this).dialog("close"); 
 						}, 
 						"Cancelar": function() { 
+							//$("#fdnac")[0].reset();
+							dlgfdnac("a","m","d");
 							$(this).dialog("close"); 
 						} 
 					}
