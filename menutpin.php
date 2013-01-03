@@ -11,7 +11,7 @@ echo '
 	</div>
 		<p>&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="#" class="button"><span class="ui-icon ui-icon-extlink"></span>Exportar</a>
-		<a href="pinPdf.php" class="button"><span class="ui-icon ui-icon-print"></span>Imprimir</a>		
+		<a href="pinPdf.php" target="_blank" class="button"><span class="ui-icon ui-icon-print"></span>Imprimir</a>		
 		</p>
 </div>												
 <!-- tabla de pines -->

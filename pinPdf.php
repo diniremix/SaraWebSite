@@ -1,6 +1,7 @@
 <?php
 	require('pdfMysqlTable.php');
 	class PDF extends PDF_MySQL_Table{
+		var $HREF="";
 		//Cabecera de página
 		function Header(){
 			//Logo
@@ -89,7 +90,7 @@
 		    $style = '';
 		    foreach(array('B', 'I', 'U') as $s)
 		    {
-		        if($this->$s>0)
+		        if($s>0)
 		            $style .= $s;
 		    }
 		    $this->SetFont('',$style);
